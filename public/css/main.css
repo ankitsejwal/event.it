@@ -1,4 +1,43 @@
 body {
-    background: #000;
+    background: rgb(16, 21, 34);
     color: antiquewhite;
+}
+
+#logo {
+    padding: 15px;
+    font-family: roboto;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: rgb(198, 136, 255);
+}
+
+#wrapper .event-name {
+    font-family: roboto;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: rgb(230, 203, 255);
+    margin-bottom: 0px;
+}
+
+#wrapper .counter .digit {
+    font-family: roboto;
+    font-weight: 300;
+    font-size: 8rem;
+    color: #eee;
+}
+
+#wrapper .counter .label {
+    font-size: 1.6rem;
+    color: rgb(232, 232, 232);
+    font-family: roboto;
+    font-weight: 300;
+}
+
+#wrapper .local-timezone {
+    font-family: roboto;
+    font-weight: 100;
+    font-size: 1.3rem;
+    margin-top: 50px;
 }
