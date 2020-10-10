@@ -1,1 +1,46 @@
-Home Page
+<div class="row vh-100">
+    <div class="col my-auto">
+        <div id="wrapper" class="text-center my-auto">
+            <div class="event-name">Apple October 12 Event</div>
+            <div class="row counter">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-3">
+                            <p class="digit" id="days">00</p>
+                            <p class="label">Days</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="digit" id="hours">00</p>
+                            <p class="label">Hours</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="digit" id="minutes">00</p>
+                            <p class="label">Minutes</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="digit" id="seconds">00</p>
+                            <p class="label">Seconds</p>
+                        </div>
+                    </div>
+                    <div class="clock row">
+                        <p class="col text-left">
+                            Current time Local: <span id="local-time"></span>
+                        </p>
+                        <p class="col text- right">
+                            Current time Event: <span id="dest-time"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="local-timezone"></div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.9.0/date_fns.min.js"
+    integrity="sha512-ToehgZGJmTS39fU8sfP9/f0h2Zo6OeXXKgpdEgzqUtPfE5By1K/ZkD8Jtp5PlfdaWfGVx+Jw5j10h63wSwM1HA=="
+    crossorigin="anonymous"
+></script>
+<script src="js/main.js"></script>
