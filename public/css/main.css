@@ -5,7 +5,7 @@ body {
 
 header {
     padding: 25px;
-    margin-bottom: -100px;
+    margin-bottom: -50px;
 }
 
 #wrapper .event-name {
@@ -14,7 +14,7 @@ header {
     font-weight: 500;
     font-size: 1.8rem;
     color: rgb(230, 203, 255);
-    margin-bottom: 0px;
+    margin-bottom: 30px;
 }
 
 #wrapper .counter .digit {
@@ -26,7 +26,7 @@ header {
 
 #wrapper .counter .label {
     font-size: 1.6rem;
-    color: rgb(232, 232, 232);
+    color: rgb(191, 191, 191);
     font-family: roboto;
     font-weight: 300;
 }
@@ -36,4 +36,13 @@ header {
     font-weight: 100;
     font-size: 1.3rem;
     margin-top: 50px;
+}
+
+.clock {
+    font-family: roboto;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 50px;
+    line-height: 0.5rem;
+    color: #aaa;
 }
