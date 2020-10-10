@@ -3,13 +3,9 @@ body {
     color: antiquewhite;
 }
 
-#logo {
-    padding: 15px;
-    font-family: roboto;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.3rem;
-    color: rgb(198, 136, 255);
+header {
+    padding: 25px;
+    margin-bottom: -100px;
 }
 
 #wrapper .event-name {
