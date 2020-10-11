@@ -1,10 +1,21 @@
-const { zonedTimeToUtc, utcToZonedTime } = require('date-fns-tz');
+function animateEventName(eventName) {
+    let string = '';
 
-const date = new Date();
-const currentTimeDest = zonedTimeToUtc(date, 'America/Los_Angeles');
-const eventTimeDest = zonedTimeToUtc(
-    '12 October 2020 10:00:00',
-    'America/Los_Angeles'
-);
-console.log(currentTimeDest);
-console.log(eventTimeDest);
+    for (let x = 0; x < eventName.length; x++) {
+        string = string + eventName[x];
+        console.log(string);
+        pause(40);
+        // setTimeout(function (x) {
+        //     console.log(string);
+        // }, 40 * x);
+    }
+}
+
+function pause(milliseconds) {
+    var dt = new Date();
+    while (new Date() - dt <= milliseconds) {
+        /* Do nothing */
+    }
+}
+
+animateEventName('Apple 12 October 2020 Event');

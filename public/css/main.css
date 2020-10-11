@@ -8,13 +8,22 @@ header {
     margin-bottom: -50px;
 }
 
-#wrapper .event-name {
+#event-name {
     font-family: roboto;
     font-style: italic;
     font-weight: 500;
     font-size: 1.8rem;
     color: rgb(230, 203, 255);
     margin-bottom: 30px;
+}
+
+#event-name span {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+#event-name .fade {
+    opacity: 1;
 }
 
 #wrapper .counter .digit {
