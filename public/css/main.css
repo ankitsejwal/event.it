@@ -18,8 +18,8 @@ header {
 }
 
 #event-name span {
-    opacity: 1;
-    transition: all 0.5s ease;
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
 #event-name .fade {

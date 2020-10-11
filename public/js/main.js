@@ -40,39 +40,3 @@ function counter() {
 }
 
 counter();
-
-function pause(milliseconds) {
-    var dt = new Date();
-    while (new Date() - dt <= milliseconds) {
-        /* Do nothing */
-    }
-}
-
-function animateEventName() {
-    let eventName = document.getElementById('event-name');
-    eventText = eventName.textContent;
-    let splitName = eventText.split('');
-    eventName.innerHTML = '';
-
-    console.log(splitName);
-
-    for (let x = 0; x < splitName.length; x++) {
-        eventName.innerHTML += '<span>' + splitName[x] + '</span>';
-    }
-
-    const char = 0;
-    const timer = setInterval(onTick, 50);
-
-    function onTick() {
-        const span = eventName.querySelectorAll('span')[char];
-        span.classList.add('fade');
-        char++;
-        if (char === splitName.length) {
-            clearInterval(timer);
-            timer = null;
-            return;
-        }
-    }
-}
-
-animateEventName();
