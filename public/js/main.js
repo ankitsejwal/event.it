@@ -1,4 +1,4 @@
-const local = document.getElementById('local-time');
+const local = document.getElementById('local');
 
 function clock() {
     // get todays date
@@ -11,10 +11,10 @@ function clock() {
     let destinationTime = utc + destinationOffset * 3600000;
     destinationTime = new Date(destinationTime);
 
-    console.log('local time: ' + localTime);
-    console.log('Timezone Offset: ' + localOffset);
-    console.log('utc: ' + utc);
-    console.log(destinationTime.toLocaleString());
+    // console.log('local time: ' + localTime);
+    // console.log('Timezone Offset: ' + localOffset);
+    // console.log('utc: ' + utc);
+    // console.log(destinationTime.toLocaleString());
 
     document.getElementById('local-time').innerHTML = date.toLocaleString();
     document.getElementById(
