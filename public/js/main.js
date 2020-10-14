@@ -7,8 +7,8 @@ const hours = document.getElementById('hours');
 const seconds = document.getElementById('seconds');
 
 // Time where the event is to be held
-const eventTime = luxon.DateTime.fromISO('2020-10-14T04:47:00', {
-    zone: 'America/Los_Angeles',
+const eventTime = luxon.DateTime.fromISO('2020-10-14T10:00:00', {
+    zone: 'America/New_York',
 });
 
 function clock(eventTime) {
@@ -55,7 +55,7 @@ function counter(eventTime) {
     minutes.innerHTML = timer.minutes;
     seconds.innerHTML = timer.seconds;
 
-    const t = setTimeout(function () {
+    setTimeout(function () {
         clock(eventTime);
         counter(eventTime);
     }, 1000);
