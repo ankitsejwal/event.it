@@ -1,42 +1,50 @@
 const local = document.getElementById('local');
+const localTime = document.getElementById('local-time');
+const destTime = document.getElementById('dest-time');
+const days = document.getElementById('days');
+const minutes = document.getElementById('minutes');
+const hours = document.getElementById('hours');
+const seconds = document.getElementById('seconds');
 
-function clock() {
-    // get todays date
-    const date = new Date();
-    const localTime = date.getTime();
-    const localOffset = date.getTimezoneOffset() * 60000; // millisecond
-    const utc = localTime + localOffset; // time in utc
+// Time where the event is to be held
+const eventTime = luxon.DateTime.fromISO('2020-10-14T04:27:00', {
+    zone: 'America/Los_Angeles',
+});
 
-    const destinationOffset = -7; // pdt
-    let destinationTime = utc + destinationOffset * 3600000;
-    destinationTime = new Date(destinationTime);
+function clock(eventTime) {
+    const time = luxon.DateTime.local()
+        .setZone('America/Los_Angeles')
+        .toLocaleString(luxon.DateTime.DATETIME_SHORT);
 
-    // console.log('local time: ' + localTime);
-    // console.log('Timezone Offset: ' + localOffset);
-    // console.log('utc: ' + utc);
-    // console.log(destinationTime.toLocaleString());
+    eventTime = eventTime.toLocaleString(luxon.DateTime.DATETIME_SHORT);
 
-    document.getElementById('local-time').innerHTML = date.toLocaleString();
-    document.getElementById(
-        'dest-time'
-    ).innerHTML = destinationTime.toLocaleString();
+    console.log(time);
+    console.log(eventTime);
+
+    localTime.innerHTML = time;
+    destTime.innerHTML = eventTime;
 }
 
-function counter() {
-    const days = document.getElementById('days');
-    const minutes = document.getElementById('minutes');
-    const hours = document.getElementById('hours');
-    const seconds = document.getElementById('seconds');
-    const date = new Date();
+function counter(eventTime) {
+    // current time where the event is to be held
+    const currentTime = luxon.DateTime.local().setZone('America/Los_Angeles');
 
-    hours.innerHTML = date.getHours();
-    minutes.innerHTML = date.getMinutes();
-    seconds.innerHTML = date.getSeconds();
+    // Getting the difference in time
+    const timeleft = eventTime
+        .diff(currentTime, ['days', 'hours', 'minutes', 'seconds'])
+        .toObject();
+
+    console.log(timeleft);
+
+    days.innerHTML = timeleft.days;
+    hours.innerHTML = timeleft.hours;
+    minutes.innerHTML = timeleft.minutes;
+    seconds.innerHTML = Math.round(timeleft.seconds);
 
     setTimeout(function () {
-        clock();
-        counter();
+        clock(eventTime);
+        counter(eventTime);
     }, 1000);
 }
 
-counter();
+counter(eventTime);
