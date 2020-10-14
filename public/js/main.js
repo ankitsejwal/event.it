@@ -6,14 +6,16 @@ const minutes = document.getElementById('minutes');
 const hours = document.getElementById('hours');
 const seconds = document.getElementById('seconds');
 
+const timezone = 'America/New_York';
+
 // Time where the event is to be held
-const eventTime = luxon.DateTime.fromISO('2020-10-14T04:47:00', {
-    zone: 'America/Los_Angeles',
+const eventTime = luxon.DateTime.fromISO('2020-10-14T10:00:00', {
+    zone: timezone,
 });
 
 function clock(eventTime) {
     const time = luxon.DateTime.local()
-        .setZone('America/Los_Angeles')
+        .setZone(timezone)
         .toLocaleString(luxon.DateTime.DATETIME_SHORT);
 
     eventTime = eventTime.toLocaleString(luxon.DateTime.DATETIME_SHORT);
@@ -34,19 +36,19 @@ function counter(eventTime) {
     console.log(timeleft);
 
     let timer = {
-        days: timeleft.days,
-        hours: timeleft.hours,
-        minutes: timeleft.minutes,
-        seconds: Math.round(timeleft.seconds),
+        days: ('0' + timeleft.days).slice(-2),
+        hours: ('0' + timeleft.hours).slice(-2),
+        minutes: ('0' + timeleft.minutes).slice(-2),
+        seconds: ('0' + Math.round(timeleft.seconds)).slice(-2),
     };
 
     // stop counter from printing -ve numbers
-    if (timeleft.seconds < 1) {
+    if (timeleft.seconds < 0) {
         timer = {
-            days: 0,
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
+            days: '00',
+            hours: '00',
+            minutes: '00',
+            seconds: '00',
         };
     }
 
@@ -55,7 +57,7 @@ function counter(eventTime) {
     minutes.innerHTML = timer.minutes;
     seconds.innerHTML = timer.seconds;
 
-    const t = setTimeout(function () {
+    setTimeout(function () {
         clock(eventTime);
         counter(eventTime);
     }, 1000);
