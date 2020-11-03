@@ -6,10 +6,10 @@ const minutes = document.getElementById('minutes');
 const hours = document.getElementById('hours');
 const seconds = document.getElementById('seconds');
 
-const timezone = 'America/New_York';
+const timezone = 'America/Los_Angeles';
 
 // Time where the event is to be held
-const eventTime = luxon.DateTime.fromISO('2020-10-14T10:00:00', {
+const eventTime = luxon.DateTime.fromISO('2020-11-10T10:00:00', {
     zone: timezone,
 });
 
